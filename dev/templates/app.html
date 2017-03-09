@@ -1,0 +1,8 @@
+<result-rpsls [result]="result" (back)="goBack()" *ngIf="gameFinished" class="above-all white-with-opacity"></result-rpsls>
+<div class="container">
+    <div *ngIf="!boardShowed" class="d-flex flex-column align-items-center justify-content-center full-height-viewport">
+        <h1 class="text-center p-2">Rock-Paper-Scissors-Lizard-Spock</h1>
+        <div class="wrapper p-2"><button type="button" class="btn btn-lg btn-outline-warning" (click)="showBoard()"> Play </button></div>
+    </div>
+    <board-rpsls (result)="resultForward($event)" *ngIf="boardShowed"></board-rpsls>
+</div>

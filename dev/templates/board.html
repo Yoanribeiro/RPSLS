@@ -1,0 +1,22 @@
+<div *ngIf="!gameStarted" class="d-flex flex-column align-items-center justify-content-center full-height-viewport">
+    <p class="text-center p-2">Each player has 3 seconds to choose from the 5 options</p>
+    <div  class="wrapper text-center p-2"><button type="button" class="btn btn-outline-secondary" (click)="startPlaying()"> Start </button></div>
+</div>
+<div *ngIf="gameStarted" class="board d-flex flex-column align-items-center justify-content-center full-height-viewport">
+    <h3 *ngIf="gameStarted && !optionPlayer1" class="text-center p-2"> Player 1 you have {{(streamTimer | async)}} seconds</h3>
+    <h3 *ngIf="gameStarted && optionPlayer1 && !optionPlayer2" class="text-center p-2"> Player 2 you have {{(streamTimer | async)}} seconds </h3>
+    <div class="row justify-content-md-center p-2">
+        <div class="col-md-6 col-6 text-center"><img src="img/rock.png" class="img-fluid clickable-img" (click)="chooseOption(1)"></div>
+        <div class="col-md-6 col-6 text-center"><img src="img/paper.png" class="img-fluid clickable-img" (click)="chooseOption(2)"></div>
+        <!-- Add the extra clearfix for only the required viewport -->
+        <div class="clearfix"></div>
+        <div class="col-md-12 col-6 text-center"><img src="img/scissors.png" class="img-fluid clickable-img" (click)="chooseOption(3)"></div>
+        <!-- Add the extra clearfix for only the required viewport -->
+        <div class="clearfix visible-md visible-lg"></div>
+        <div class="col-md-6 col-6 text-center"><img src="img/lizard.png" class="img-fluid clickable-img" (click)="chooseOption(4)"></div>
+        <!-- Add the extra clearfix for only the required viewport -->
+        <div class="clearfix visible-xs"></div>
+        <div class="col-md-6 col-12 text-center"><img src="img/spock.png" class="img-fluid clickable-img" (click)="chooseOption(5)"></div>
+    </div>
+    <p *ngIf="!gameStarted" class="text-center p-2">Choose between the option</p>
+</div>

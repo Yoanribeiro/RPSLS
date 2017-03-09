@@ -1,0 +1,7 @@
+**/typings/**
+!node_modules/
+node_modules/*
+!/node_modules/core-js/
+!/node_modules/zone.js/
+!/node_modules/reflect-metadata/
+**/*npm-debug.log.*
